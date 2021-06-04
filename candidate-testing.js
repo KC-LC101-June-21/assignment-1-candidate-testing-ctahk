@@ -7,7 +7,7 @@ let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
-let candidateAnswer = "";
+let candidateAnswer;
 let questions;
 let correctAnswers;
 let candidateAnswers;
@@ -32,10 +32,12 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
     if(candidateAnswer === correctAnswer) {
       console.log("That is correct! ");
-    } else {
+    } else if (candidateAnswer !== correctAnswer) {
       console.log("That is incorrect. ");
-    }
-}
+    
+
+    
+  }
 
   let grade;
   
