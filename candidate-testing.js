@@ -23,19 +23,17 @@ candidateName = input.question("Candidate Name: ");
 
 }
 
-
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
-  for (i = 0; i < 5; i++) {
+  for (let i = 0; i < correctAnswers.length; i++) {
     candidateAnswers.push(input.question(`${[i+1]}) ${questions[i]}`));
     console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
   }
-  
+    
   candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
   correctAnswers = correctAnswers.toString().toUpperCase().split(',');
-  
-  
+
   for (let i = 0; i < correctAnswers.length; i++) {
     if (candidateAnswers[i] === correctAnswers[i]){
       numCorrect ++;
@@ -43,8 +41,6 @@ function askQuestion() {
   }
   
 }
-
-
 
 function gradeQuiz(candidateAnswers) {
   
@@ -60,9 +56,6 @@ function gradeQuiz(candidateAnswers) {
 
   return grade;
 }
-
-
-
 
 function runProgram() {
   askForName();
