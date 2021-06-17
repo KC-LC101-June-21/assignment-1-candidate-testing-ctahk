@@ -31,30 +31,40 @@ function askQuestion() {
     console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
   }
     
-  candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
-  correctAnswers = correctAnswers.toString().toUpperCase().split(',');
+  //candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
+  //correctAnswers = correctAnswers.toString().toUpperCase().split(',');
 
-  for (let i = 0; i < correctAnswers.length; i++) {
-    if (candidateAnswers[i] === correctAnswers[i]){
-      numCorrect ++;
-    }
-  }
+  //for (let i = 0; i < correctAnswers.length; i++) {
+    //if (candidateAnswers[i] === correctAnswers[i]){
+      //numCorrect ++;
+   // }
+  //}
   
 }
 
 function gradeQuiz(candidateAnswers) {
   
   //TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly//
+  candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
+  correctAnswers = correctAnswers.toString().toUpperCase().split(',');
   
-  let grade = (numCorrect / questions.length)* 100;
-  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} responses correct) <<<`);
-  if (grade >= 80) {
-    console.log(`>>> Status: PASSED <<<`);
-  } else {
-    console.log(`>>> Status: FAILED <<<`);
+  for (let i = 0; i < correctAnswers.length; i++) {
+    if (candidateAnswers[i] === correctAnswers[i]){
+      numCorrect ++;
+    }
   }
+  
+let grade = (numCorrect/questions.length)* 100;
+console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} responses correct) <<<`);
 
-  return grade;
+if (grade >= 80) {
+console.log(`>>> Status: PASSED <<<`);
+} else {
+console.log(`>>> Status: FAILED <<<`);
+}
+
+return grade;
+
 }
 
 function runProgram() {
