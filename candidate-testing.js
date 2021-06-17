@@ -45,17 +45,17 @@ function gradeQuiz(candidateAnswers) {
     }
   }
   
-  let grade = (numCorrect/correctAnswers.length)* 100;
+let grade = (numCorrect/correctAnswers.length)* 100;
   
-  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${correctAnswers.length} responses correct) <<<`);
+console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${correctAnswers.length} responses correct) <<<`);
 
-  if (grade >= 80) {
-  console.log(`>>> Status: PASSED <<<`);
-  } else {
-  console.log(`>>> Status: FAILED <<<`);
-  }
+if (grade >= 80) {
+console.log(`>>> Status: PASSED <<<`);
+} else {
+console.log(`>>> Status: FAILED <<<`);
+}
 
-  return grade;
+return grade;
 
 }
 
