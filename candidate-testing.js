@@ -36,26 +36,26 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
   
   //TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly//
-  candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
-  correctAnswers = correctAnswers.toString().toUpperCase().split(',');
+  //candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
+  //correctAnswers = correctAnswers.toString().toUpperCase().split(',');
   
   for (let i = 0; i < correctAnswers.length; i++) {
-    if (candidateAnswers[i] === correctAnswers[i]){
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
       numCorrect ++;
     }
   }
   
-let grade = (numCorrect/correctAnswers.length)* 100;
+  let grade = (numCorrect/correctAnswers.length)* 100;
   
-console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${correctAnswers.length} responses correct) <<<`);
+  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${correctAnswers.length} responses correct) <<<`);
 
-if (grade >= 80) {
-console.log(`>>> Status: PASSED <<<`);
-} else {
-console.log(`>>> Status: FAILED <<<`);
-}
+  if (grade >= 80) {
+  console.log(`>>> Status: PASSED <<<`);
+  } else {
+  console.log(`>>> Status: FAILED <<<`);
+  }
 
-return grade;
+  return grade;
 
 }
 
