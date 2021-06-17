@@ -19,7 +19,7 @@ let numCorrect = 0;
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 
-candidateName = input.question("Candidate Name: "); 
+  candidateName = input.question("Candidate Name: "); 
 
 }
 
@@ -31,15 +31,6 @@ function askQuestion() {
     console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
   }
     
-  //candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
-  //correctAnswers = correctAnswers.toString().toUpperCase().split(',');
-
-  //for (let i = 0; i < correctAnswers.length; i++) {
-    //if (candidateAnswers[i] === correctAnswers[i]){
-      //numCorrect ++;
-   // }
-  //}
-  
 }
 
 function gradeQuiz(candidateAnswers) {
@@ -54,16 +45,17 @@ function gradeQuiz(candidateAnswers) {
     }
   }
   
-let grade = (numCorrect/questions.length)* 100;
-console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} responses correct) <<<`);
+  let grade = (numCorrect/questions.length)* 100;
+  
+  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} responses correct) <<<`);
 
-if (grade >= 80) {
-console.log(`>>> Status: PASSED <<<`);
-} else {
-console.log(`>>> Status: FAILED <<<`);
-}
+  if (grade >= 80) {
+  console.log(`>>> Status: PASSED <<<`);
+  } else {
+  console.log(`>>> Status: FAILED <<<`);
+  }
 
-return grade;
+  return grade;
 
 }
 
@@ -72,14 +64,10 @@ function runProgram() {
   // TODO 1.1c: Ask for candidate's name //
 
   //console.log(`Hello and welcome, ${candidateName}!`);
-  
 
   askQuestion();
 
-  
-
   gradeQuiz(this.candidateAnswers);
-
 
 }
 
