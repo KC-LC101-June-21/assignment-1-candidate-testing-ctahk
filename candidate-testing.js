@@ -30,23 +30,21 @@ function askQuestion() {
     candidateAnswers.push(input.question(`${[i+1]}) ${questions[i]}`));
     console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
   }
-    
+
+
 }
 
 function gradeQuiz(candidateAnswers) {
   
   //TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly//
-  //candidateAnswers = candidateAnswers.toString().toUpperCase().split(',');
-  //correctAnswers = correctAnswers.toString().toUpperCase().split(',');
-  
+ 
   for (let i = 0; i < correctAnswers.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
       numCorrect ++;
     }
   }
-  let grade = 0;
-  grade = (numCorrect/correctAnswers.length)* 100;
   
+  let grade = (numCorrect/correctAnswers.length)* 100;
   console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${correctAnswers.length} responses correct) <<<`);
 
   if (grade >= 80) {
@@ -56,7 +54,7 @@ function gradeQuiz(candidateAnswers) {
   }
 
   return grade;
-
+  
 }
 
 function runProgram() {
